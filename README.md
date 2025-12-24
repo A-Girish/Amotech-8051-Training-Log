@@ -7,7 +7,6 @@ Board Used:
 - Amotech 8051 Development Board
 - MCU: AT89S52
 - IDE: Keil µVision
-- Simulator: Proteus
 
 Topics Practiced:
 - GPIO programming
