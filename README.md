@@ -14,6 +14,7 @@ Topics Practiced:
 - 4x4 matrix keypad scanning
 - LCD and keypad integrated systems
 - Password-based lock system
+- calculator to handle 8/16/32 bit arithmatic operations
 
 Experiments:
 01 – LED Blinking  
@@ -21,5 +22,7 @@ Experiments:
 03 – LCD and Keypad Interfacing  
 04 – LCD Keypad Lock System  
 05 – Calculator
+        - basic calculator using string methods
+        - basic calculator to do 8/16/32 bit arithmatic operations
 
 This repository is continuously updated as I progress.
