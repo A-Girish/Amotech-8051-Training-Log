@@ -1,5 +1,4 @@
 #include <reg51.h>
-
 #define lcdport P3
 sbit rs = P3^2;
 sbit en = P3^3;
@@ -30,22 +29,28 @@ void delay(int d)
 }
 
 void lcd_enable()
-{	en=1;delay(2);en=0;
-	
+{	
+	en=1;
+	delay(2);
+	en=0;
 }
 
 void lcd_cmd(unsigned char c)
 	{
     rs=0;
-    lcdport=(lcdport&0x0F)|(c&0xF0); lcd_enable();
-    lcdport=(lcdport&0x0F)|((c<<4)&0xF0); lcd_enable();
+    lcdport=(lcdport&0x0F)|(c&0xF0); 
+		lcd_enable();
+    lcdport=(lcdport&0x0F)|((c<<4)&0xF0); 
+		lcd_enable();
 	}
 
 void lcddata(unsigned char d)
 	{
     rs=1;
-    lcdport=(lcdport&0x0F)|(d&0xF0); lcd_enable();
-    lcdport=(lcdport&0x0F)|((d<<4)&0xF0); lcd_enable();
+    lcdport=(lcdport&0x0F)|(d&0xF0); 
+		lcd_enable();
+    lcdport=(lcdport&0x0F)|((d<<4)&0xF0); 
+		lcd_enable();
 		
 	}
 
@@ -55,7 +60,7 @@ void lcd_string(unsigned char *str)
 	for(i=0;str[i]!=0;i++)
 	{
 		lcddata(str[i]);
-		delay(1);
+		delay(10);
 	}
 }
 
@@ -72,7 +77,7 @@ void lcd_init(void)
 
 void lcd_print_int(unsigned long value)
 {
-    char buf[6];
+    char buf[11];
     int i = 0;
 
     if(value == 0)
@@ -126,14 +131,14 @@ char keypad_key(void)
     return 0;   // no key pressed
 }
 
-void mode_select(char k){
+void mode_select(char key){
     if(!mode_screen_shown)
 		{
       lcd_cmd(0x01); lcd_string("SELECT MODE");
       lcd_cmd(0xC0); lcd_string("A=8 B=16 C=32");
       mode_screen_shown = 1;
     }
-    if(k=='A')
+    if(key == 'A')
 		{
 			mode=1;
 			max_value=255;
@@ -142,7 +147,7 @@ void mode_select(char k){
 			delay(200);
 			lcd_cmd(0x01);
 		}
-    else if(k=='B')
+    else if(key == 'B')
 		{
 			mode=2;
 			max_value=65535;
@@ -151,7 +156,7 @@ void mode_select(char k){
 			delay(200);
 			lcd_cmd(0x01);
 		}
-    else if(k=='C')
+    else if(key == 'C')
 		{
 			mode=3;
 			max_value=4294967295UL;
@@ -267,7 +272,7 @@ void main()
 		lcd_cmd(0x01);
 		lcd_string("# = Calculate");
 		lcd_cmd(0xC0);
-		lcd_string("* = Clear display");
+		lcd_string("* = Clear Screen");
 		delay(300);
 		lcd_cmd(0x01);
 	
