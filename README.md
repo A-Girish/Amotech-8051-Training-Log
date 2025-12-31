@@ -22,7 +22,7 @@ Experiments:
 03 – LCD and Keypad Interfacing  
 04 – LCD Keypad Lock System  
 05 – Calculator
-Basic calculator using character-to-number conversion
-Calculator supporting 8-bit, 16-bit and 32-bit arithmetic
+5.1 - Basic calculator using character-to-number conversion
+5.2 - Calculator supporting 8-bit, 16-bit and 32-bit arithmetic
 
 This repository is continuously updated as I progress.
