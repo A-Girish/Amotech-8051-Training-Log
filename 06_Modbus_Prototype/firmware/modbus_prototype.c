@@ -81,19 +81,16 @@ void main()
 						else
 								value = 0;   // unknown register ? return 0
 
-						/* build response */
 						resp[0] = 1;
 						resp[1] = 3;
 						resp[2] = 2;
-						resp[3] = value >> 8;
-						resp[4] = value & 0xFF;
+						resp[3] = 0x00;
+						resp[4] = 0x64;   // value = 100
 
-						/* add CRC */
 						crc = modbus_crc(resp,5);
 						resp[5] = crc & 0xFF;
 						resp[6] = crc >> 8;
 
-						/* send response */
 						for(i=0;i<7;i++)
 								uart_tx(resp[i]);
 				}
