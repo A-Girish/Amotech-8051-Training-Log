@@ -19,46 +19,6 @@ The objective of this repository is to maintain a structured record of:
 
 ---
 
-## 🏢 Internship Information
-
-| Field            | Details                                                 |
-| ---------------- | ------------------------------------------------------- |
-| **Role**         | Embedded Systems / Automation Developer Intern          |
-| **Organization** | Amotech Labs                                            |
-| **Duration**     | 6 Months                                                |
-| **Focus Areas**  | Embedded Firmware, Automation, Industrial Communication |
-
----
-
-## 🧰 Internship Focus Areas
-
-### 🔹 Embedded Firmware Development
-
-* Microcontroller programming
-* Embedded C development
-* Peripheral interfacing
-* Firmware debugging
-
-### 🔹 Industrial Communication
-
-* Serial communication
-* Protocol-based device communication
-* Industrial communication systems
-
-### 🔹 Automation Systems
-
-* HMI interaction
-* Automation workflows
-* Industrial device control
-
-### 🔹 Hardware Interaction
-
-* Interfacing external hardware
-* Working with development boards
-* Debugging embedded hardware setups
-
----
-
 ## 📚 Repository Purpose
 
 This repository serves as a **centralized learning archive** during the internship.
